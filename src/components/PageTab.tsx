@@ -39,7 +39,7 @@ export const PageTab: React.FC<PageTabProps> = ({
             group relative flex items-center justify-center text-sm font-medium
             transition-all duration-200 cursor-move select-none min-w-0
             focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2
-            ${isActive ? 'bg-white text-black border border-gray-200 shadow-lg' : ''}
+            ${isActive ? 'bg-white text-black border border-gray-200' : ''}
             ${snapshot.isDragging ? 'shadow-xl ring-2 ring-blue-200 bg-white z-50 rotate-2 scale-105' : ''}
           `}
           tabIndex={0}
