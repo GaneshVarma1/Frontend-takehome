@@ -158,20 +158,14 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
           </Droppable>
 
           {/* Add page button at the end */}
-          <button
-            onClick={() => handleAddPage(pages.length - 1)}
-            className="ml-2 flex items-center justify-center font-medium bg-white text-black border border-gray-200 shadow-sm hover:bg-gray-50 transition"
-            style={{
-              width: '106.5px',
-              height: '32px',
-              borderRadius: '8px',
-              borderWidth: '0.5px',
-              padding: '4px 10px',
-              gap: '6px',
-            }}
-          >
-            + Add page
-          </button>
+          <div className="ml-2">
+            <AddPageButton
+              onAdd={() => handleAddPage(pages.length - 1)}
+              onHover={() => {}}
+              onLeave={() => {}}
+              variant="text"
+            />
+          </div>
         </div>
 
         {contextMenu && (

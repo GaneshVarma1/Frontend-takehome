@@ -5,13 +5,38 @@ interface AddPageButtonProps {
   onAdd: () => void;
   onHover: () => void;
   onLeave: () => void;
+  variant?: 'icon' | 'text';
 }
 
 export const AddPageButton: React.FC<AddPageButtonProps> = ({
   onAdd,
   onHover,
   onLeave,
+  variant = 'icon'
 }) => {
+  if (variant === 'text') {
+    return (
+      <button
+        onClick={onAdd}
+        onMouseEnter={onHover}
+        onMouseLeave={onLeave}
+        className="flex items-center justify-center font-medium bg-white text-black border border-gray-200 shadow-sm hover:bg-gray-50 transition whitespace-nowrap"
+        style={{
+          width: '106.5px',
+          height: '32px',
+          borderRadius: '8px',
+          borderWidth: '0.5px',
+          padding: '4px 10px',
+          gap: '6px',
+        }}
+        title="Add page"
+        tabIndex={0}
+      >
+        + Add page
+      </button>
+    );
+  }
+
   return (
     <div
       className="relative w-8 h-8 flex items-center justify-center"
