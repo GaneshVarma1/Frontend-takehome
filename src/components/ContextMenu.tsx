@@ -99,8 +99,6 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
           <h3 className="text-sm font-semibold text-gray-900">Settings</h3>
         </div>
         
-        {/* Divider above menu items */}
-        <div className="border-t border-gray-300 my-1" />
         {/* First four menu items */}
         {menuActions.slice(0, 4).map((action) => (
           <React.Fragment key={action.label}>
@@ -132,10 +130,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
         ))}
 
         {/* Light gray divider above Delete section, Figma style */}
-        <div className="border-t border-gray-200 my-2" />
+        <hr className="border-t border-gray-200 mx-4 my-1" />
 
         {/* Delete menu item in its own section */}
-        <div className="px-2 pt-4 pb-2">
+        <div>
           {menuActions.slice(4).map((action) => (
             <button
               key={action.label}
