@@ -146,6 +146,7 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
                             onAdd={() => handleAddPage(index)}
                             onHover={() => {}}
                             onLeave={() => {}}
+                            size="small"
                           />
                         </div>
                       </>

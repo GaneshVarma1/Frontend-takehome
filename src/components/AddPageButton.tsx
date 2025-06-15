@@ -6,13 +6,15 @@ interface AddPageButtonProps {
   onHover: () => void;
   onLeave: () => void;
   variant?: 'icon' | 'text';
+  size?: 'small' | 'default';
 }
 
 export const AddPageButton: React.FC<AddPageButtonProps> = ({
   onAdd,
   onHover,
   onLeave,
-  variant = 'icon'
+  variant = 'icon',
+  size = 'default',
 }) => {
   if (variant === 'text') {
     return (
@@ -37,6 +39,28 @@ export const AddPageButton: React.FC<AddPageButtonProps> = ({
     );
   }
 
+  // Small icon-only button
+  if (size === 'small') {
+    return (
+      <div
+        className="relative w-6 h-6 flex items-center justify-center"
+        onMouseEnter={onHover}
+        onMouseLeave={onLeave}
+      >
+        <button
+          onClick={onAdd}
+          className="w-5 h-5 rounded-full flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition"
+          style={{ padding: 0 }}
+          title="Add page"
+          tabIndex={0}
+        >
+          <Plus className="w-3.5 h-3.5 text-black" />
+        </button>
+      </div>
+    );
+  }
+
+  // Default icon-only button
   return (
     <div
       className="relative w-8 h-8 flex items-center justify-center"
