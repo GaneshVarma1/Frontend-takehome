@@ -56,8 +56,8 @@ export const PageTab: React.FC<PageTabProps> = ({
           style={{
             ...provided.draggableProps.style,
             ...(isActive
-              ? { width: '108px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
-              : { backgroundColor: isHovered ? 'rgba(157, 164, 178, 0.35)' : 'rgba(157, 164, 178, 0.15)', color: '#677289', width: '83px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
+              ? { minWidth: '108px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px 8px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
+              : { backgroundColor: isHovered ? 'rgba(157, 164, 178, 0.35)' : 'rgba(157, 164, 178, 0.15)', color: '#677289', minWidth: '83px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px 8px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
             )
           }}
         >
@@ -69,7 +69,7 @@ export const PageTab: React.FC<PageTabProps> = ({
             <IconComponent className="w-4 h-4" />
           </div>
           {/* Page Title */}
-          <span className="whitespace-nowrap font-medium">
+          <span className="whitespace-nowrap font-medium truncate max-w-[120px]">
             {page.title}
           </span>
           {/* More Options */}

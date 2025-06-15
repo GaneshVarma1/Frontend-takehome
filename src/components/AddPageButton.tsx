@@ -29,7 +29,7 @@ export const AddPageButton: React.FC<AddPageButtonProps> = ({
         title="Add page"
         tabIndex={0}
       >
-        <Plus className="w-4 h-4 text-orange-500" />
+        <Plus className="w-4 h-4 text-black" />
       </button>
     </div>
   );
