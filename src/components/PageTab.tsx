@@ -1,6 +1,6 @@
 import React from 'react';
 import { Draggable } from '@hello-pangea/dnd';
-import { Info, FileText, File, CheckCircle, MoreHorizontal } from 'lucide-react';
+import { Info, FileText, File, CheckCircle, MoreVertical } from 'lucide-react';
 import { FormPage } from '../types';
 
 interface PageTabProps {
@@ -59,7 +59,7 @@ export const PageTab: React.FC<PageTabProps> = ({
           {/* Page Icon */}
           <div
             className="flex-shrink-0 transition-colors duration-200 flex items-center justify-center"
-            style={!isActive ? { color: '#677289' } : { color: '#EA580C' }}
+            style={!isActive ? { color: '#677289' } : { color: '#F59D0E' }}
           >
             <IconComponent className="w-4 h-4" />
           </div>
@@ -74,10 +74,13 @@ export const PageTab: React.FC<PageTabProps> = ({
                 e.stopPropagation();
                 onContextMenu(e);
               }}
-              className="transition-opacity duration-200 p-1 rounded hover:bg-orange-100 -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 text-orange-600"
+              className="transition-opacity duration-200 p-1 rounded -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              style={{ color: '#F59D0E', backgroundColor: 'transparent' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#FFF7E6'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
               tabIndex={0}
             >
-              <MoreHorizontal className="w-3 h-3" />
+              <MoreVertical className="w-3 h-3" style={{ color: '#9DA4B2' }} />
             </button>
           )}
         </div>
