@@ -40,7 +40,7 @@ export const PageTab: React.FC<PageTabProps> = ({
             transition-all duration-200 cursor-move select-none min-w-0
             focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2
             ${isActive 
-              ? 'bg-orange-50 text-black border border-orange-200 shadow-sm' 
+              ? 'bg-white text-black border border-gray-200 shadow-sm' 
               : ''
             }
             ${snapshot.isDragging 
