@@ -64,7 +64,7 @@ export const PageTab: React.FC<PageTabProps> = ({
           {/* Page Icon */}
           <div
             className="flex-shrink-0 transition-colors duration-200 flex items-center justify-center"
-            style={!isActive ? { color: '#677289' } : {}}
+            style={!isActive ? { color: '#677289' } : { color: '#EA580C' }}
           >
             <IconComponent className="w-4 h-4" />
           </div>
