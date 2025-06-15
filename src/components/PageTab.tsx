@@ -38,19 +38,13 @@ export const PageTab: React.FC<PageTabProps> = ({
           className={`
             group relative flex items-center justify-center text-sm font-medium
             transition-all duration-200 cursor-move select-none min-w-0
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2
-            ${isActive 
-              ? 'bg-white text-black border border-gray-200 shadow-sm' 
-              : ''
-            }
-            ${snapshot.isDragging 
-              ? 'shadow-xl ring-2 ring-orange-200 bg-white z-50 rotate-2 scale-105 border-orange-300' 
-              : ''
-            }
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2
+            ${isActive ? 'bg-white text-black border border-gray-200 shadow-lg' : ''}
+            ${snapshot.isDragging ? 'shadow-xl ring-2 ring-orange-200 bg-white z-50 rotate-2 scale-105 border-orange-300' : ''}
           `}
+          tabIndex={0}
           onClick={onClick}
           onContextMenu={onContextMenu}
-          tabIndex={0}
           onMouseEnter={() => !isActive && setIsHovered(true)}
           onMouseLeave={() => !isActive && setIsHovered(false)}
           style={{
@@ -79,7 +73,7 @@ export const PageTab: React.FC<PageTabProps> = ({
                 e.stopPropagation();
                 onContextMenu(e);
               }}
-              className="transition-opacity duration-200 p-1 rounded hover:bg-orange-100 -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 opacity-100 text-orange-600"
+              className="transition-opacity duration-200 p-1 rounded hover:bg-orange-100 -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 text-orange-600"
               tabIndex={0}
             >
               <MoreHorizontal className="w-3 h-3" />
