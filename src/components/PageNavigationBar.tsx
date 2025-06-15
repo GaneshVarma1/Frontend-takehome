@@ -25,6 +25,7 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
   activePageId,
   onPageChange,
   onAddPage,
+  onUpdatePage,
   onDeletePage,
   onDuplicatePage,
   onMovePageToFirst,
@@ -107,14 +108,8 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
               >
                 {pages.map((page, index) => (
                   <React.Fragment key={page.id}>
-                    <PageTab
-                      page={page}
-                      index={index}
-                      isActive={activePageId === page.id}
-                      onClick={() => onPageChange(page.id)}
-                      onContextMenu={(event) => handleContextMenu(page.id, event)}
-                    />
-                    {index < pages.length - 1 && (
+                    {/* Dotted line before active tab */}
+                    {activePageId === page.id && index > 0 && (
                       <div 
                         className="w-5 h-px"
                         style={{
@@ -124,15 +119,54 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
                         }}
                       />
                     )}
-                    {/* Add page button after active tab */}
+                    
+                    <PageTab
+                      page={page}
+                      index={index}
+                      isActive={activePageId === page.id}
+                      onClick={() => onPageChange(page.id)}
+                      onContextMenu={(event) => handleContextMenu(page.id, event)}
+                    />
+                    
+                    {/* Add page button and dotted line after active tab */}
                     {activePageId === page.id && (
-                      <div className="ml-2">
-                        <AddPageButton
-                          onAdd={() => handleAddPage(index)}
-                          onHover={() => {}}
-                          onLeave={() => {}}
+                      <>
+                        <div 
+                          className="w-5 h-px"
+                          style={{
+                            borderTop: '1px dotted #D1D5DB',
+                            margin: '0 0',
+                            zIndex: 0
+                          }}
                         />
-                      </div>
+                        <div className="relative">
+                          <AddPageButton
+                            onAdd={() => handleAddPage(index)}
+                            onHover={() => {}}
+                            onLeave={() => {}}
+                          />
+                        </div>
+                        <div 
+                          className="w-5 h-px"
+                          style={{
+                            borderTop: '1px dotted #D1D5DB',
+                            margin: '0 0',
+                            zIndex: 0
+                          }}
+                        />
+                      </>
+                    )}
+                    
+                    {/* Regular dotted line between non-active tabs */}
+                    {index < pages.length - 1 && activePageId !== page.id && (
+                      <div 
+                        className="w-5 h-px"
+                        style={{
+                          borderTop: '1px dotted #D1D5DB',
+                          margin: '0 0',
+                          zIndex: 0
+                        }}
+                      />
                     )}
                   </React.Fragment>
                 ))}
