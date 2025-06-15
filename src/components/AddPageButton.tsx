@@ -14,7 +14,7 @@ export const AddPageButton: React.FC<AddPageButtonProps> = ({
 }) => {
   return (
     <div
-      className="relative w-8 h-8 flex items-center justify-center mx-1"
+      className="relative w-8 h-8 flex items-center justify-center"
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
