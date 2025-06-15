@@ -130,6 +130,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
             </button>
           </React.Fragment>
         ))}
+
+        {/* Light gray divider above Delete section, Figma style */}
+        <div className="border-t border-gray-200 my-2" />
+
         {/* Delete menu item in its own section */}
         <div className="px-2 pt-4 pb-2">
           {menuActions.slice(4).map((action) => (
