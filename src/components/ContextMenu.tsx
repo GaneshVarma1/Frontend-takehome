@@ -102,7 +102,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
         {/* Divider above menu items */}
         <div className="border-t border-gray-300 my-1" />
         {/* First four menu items */}
-        {menuActions.slice(0, 4).map((action, idx) => (
+        {menuActions.slice(0, 4).map((action) => (
           <React.Fragment key={action.label}>
             <button
               onClick={action.onClick}
@@ -128,14 +128,8 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
               )}
               <span>{action.label}</span>
             </button>
-            {/* Divider after Duplicate (idx === 3) */}
-            {idx === 3 && <div className="w-full border-b-2 border-black my-3" />}
           </React.Fragment>
         ))}
-        {/* Light gray divider above Delete section */}
-        <div className="px-3 my-4">
-          <hr className="border-t-2 border-gray-300" />
-        </div>
         {/* Delete menu item in its own section */}
         <div className="px-2 pt-4 pb-2">
           {menuActions.slice(4).map((action) => (
