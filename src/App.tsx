@@ -137,7 +137,7 @@ const App: React.FC = () => {
           activePageId={activePageId}
           onPageChange={setActivePage}
           onAddPage={addPage}
-          onUpdatePage={updatePage}
+          _onUpdatePage={updatePage}
           onDeletePage={deletePage}
           onDuplicatePage={duplicatePage}
           onMovePageToFirst={movePageToFirst}

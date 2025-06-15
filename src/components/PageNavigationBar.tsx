@@ -12,7 +12,8 @@ interface PageNavigationBarProps {
   activePageId: string;
   onPageChange: (pageId: string) => void;
   onAddPage: (afterIndex: number) => void;
-  onUpdatePage: (pageId: string, updates: Partial<FormPage>) => void;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _onUpdatePage?: (pageId: string, updates: Partial<FormPage>) => void;
   onDeletePage: (pageId: string) => void;
   onDuplicatePage: (pageId: string) => void;
   onMovePageToFirst: (pageId: string) => void;
@@ -25,7 +26,8 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
   activePageId,
   onPageChange,
   onAddPage,
-  onUpdatePage,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _onUpdatePage,
   onDeletePage,
   onDuplicatePage,
   onMovePageToFirst,
