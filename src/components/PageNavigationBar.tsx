@@ -110,8 +110,8 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
               >
                 {pages.map((page, index) => (
                   <React.Fragment key={page.id}>
-                    {/* Dotted line before active tab */}
-                    {activePageId === page.id && index > 0 && (
+                    {/* Dotted line between tabs */}
+                    {index > 0 && (
                       <div 
                         className="w-5 h-px"
                         style={{
@@ -130,7 +130,7 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
                       onContextMenu={(event) => handleContextMenu(page.id, event)}
                     />
                     
-                    {/* Add page button and dotted line after active tab */}
+                    {/* Add page button after active tab */}
                     {activePageId === page.id && (
                       <>
                         <div 
@@ -148,27 +148,7 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
                             onLeave={() => {}}
                           />
                         </div>
-                        <div 
-                          className="w-5 h-px"
-                          style={{
-                            borderTop: '1px dotted #D1D5DB',
-                            margin: '0 0',
-                            zIndex: 0
-                          }}
-                        />
                       </>
-                    )}
-                    
-                    {/* Regular dotted line between non-active tabs */}
-                    {index < pages.length - 1 && activePageId !== page.id && (
-                      <div 
-                        className="w-5 h-px"
-                        style={{
-                          borderTop: '1px dotted #D1D5DB',
-                          margin: '0 0',
-                          zIndex: 0
-                        }}
-                      />
                     )}
                   </React.Fragment>
                 ))}
