@@ -25,7 +25,6 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
   activePageId,
   onPageChange,
   onAddPage,
-  onUpdatePage,
   onDeletePage,
   onDuplicatePage,
   onMovePageToFirst,
@@ -116,7 +115,14 @@ export const PageNavigationBar: React.FC<PageNavigationBarProps> = ({
                       onContextMenu={(event) => handleContextMenu(page.id, event)}
                     />
                     {index < pages.length - 1 && (
-                      <div className="w-5 h-px bg-gray-200" />
+                      <div 
+                        className="w-5 h-px"
+                        style={{
+                          borderTop: '1px dotted #D1D5DB',
+                          margin: '0 0',
+                          zIndex: 0
+                        }}
+                      />
                     )}
                     {/* Add page button after active tab */}
                     {activePageId === page.id && (
