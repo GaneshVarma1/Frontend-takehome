@@ -40,7 +40,7 @@ export const PageTab: React.FC<PageTabProps> = ({
             transition-all duration-200 cursor-move select-none min-w-0
             focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2
             ${isActive ? 'bg-white text-black border border-gray-200 shadow-lg' : ''}
-            ${snapshot.isDragging ? 'shadow-xl ring-2 ring-orange-200 bg-white z-50 rotate-2 scale-105 border-orange-300' : ''}
+            ${snapshot.isDragging ? 'shadow-xl ring-2 ring-blue-200 bg-white z-50 rotate-2 scale-105' : ''}
           `}
           tabIndex={0}
           onClick={onClick}
@@ -52,7 +52,8 @@ export const PageTab: React.FC<PageTabProps> = ({
             ...(isActive
               ? { minWidth: '108px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px 8px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
               : { backgroundColor: isHovered ? 'rgba(157, 164, 178, 0.35)' : 'rgba(157, 164, 178, 0.15)', color: '#677289', minWidth: '83px', height: '32px', borderRadius: '8px', borderWidth: '0.5px', padding: '4px 8px', gap: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
-            )
+            ),
+            ...(snapshot.isDragging ? { border: '0.5px solid #2F72E2' } : {})
           }}
         >
           {/* Page Icon */}
@@ -67,7 +68,7 @@ export const PageTab: React.FC<PageTabProps> = ({
             {page.title}
           </span>
           {/* More Options */}
-          {isActive && (
+          {isActive && !snapshot.isDragging && (
             <button
               onClick={(e) => {
                 e.stopPropagation();
